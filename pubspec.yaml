@@ -1,0 +1,20 @@
+name: connectivity_alert_widget
+description: A Flutter package to handle connectivity in an elegant way
+version: 0.0.1
+author:
+homepage:
+
+environment:
+  sdk: ">=2.1.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  connectivity: ^0.4.5+1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
