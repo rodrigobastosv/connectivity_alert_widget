@@ -1,7 +1,6 @@
 name: connectivity_alert_widget
 description: A Flutter package to handle connectivity in an elegant way
-version: 1.0.0
-author: Rodrigo Vasconcelos <rodrigobastosv@gmail.com>
+version: 1.0.0+1
 homepage: https://github.com/rodrigobastosv/connectivity_alert_widget
 
 environment:
@@ -11,7 +10,7 @@ dependencies:
   flutter:
     sdk: flutter
 
-  connectivity: ^0.4.5+1
+  connectivity: ^0.4.8+1
 
 dev_dependencies:
   flutter_test:
