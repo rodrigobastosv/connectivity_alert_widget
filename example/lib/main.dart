@@ -25,7 +25,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,8 +37,11 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             ConnectivityAlertWidget(
-              onlineWidget: Icon(Icons.network_wifi, color: Colors.green, size: 280),
-              offlineWidget: Icon(Icons.signal_wifi_off, color: Colors.red, size: 280),
+              onlineWidget:
+                  Icon(Icons.network_wifi, color: Colors.green, size: 280),
+              offlineWidget:
+                  Icon(Icons.signal_wifi_off, color: Colors.red, size: 280),
+              onConnectivityResult: (connectivity) => print(connectivity),
             ),
           ],
         ),

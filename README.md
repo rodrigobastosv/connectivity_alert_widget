@@ -9,6 +9,7 @@ The package abstract all of the hard work.
 ConnectivityAlertWidget(
   onlineWidget: Icon(Icons.network_wifi, color: Colors.green, size: 280),
   offlineWidget: Icon(Icons.signal_wifi_off, color: Colors.red, size: 280),
+  onConnectivityResult: (connectivity) => print(connectivity),
 )
 ```
 
@@ -16,3 +17,5 @@ You can choose anything to be your onlineWidget or offlineWidget but it's recome
 about her current online status.
 
 ![Example](https://media.giphy.com/media/ZF35k5v5o8NDJKDRzy/giphy.gif)
+
+If you want to do anything when there's connectivity changes, you can implement onConnectivityResult, as it gives you a callback to be executed on every connectivity change.

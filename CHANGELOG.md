@@ -1,3 +1,7 @@
+## [1.0.1]
+
+Exposing a callback to be executed in every connectivity change
+
 ## [1.0.0+1] - Updating dependency
 
 Upgrading Connectivity dependency to ^0.4.8+1

@@ -5,18 +5,23 @@ import 'dart:async';
 import 'package:connectivity/connectivity.dart';
 import 'package:flutter/material.dart';
 
+typedef ConnectivityCallback = Function(ConnectivityResult);
+
 class ConnectivityAlertWidget extends StatefulWidget {
   ConnectivityAlertWidget({
     @required this.onlineWidget,
     @required this.offlineWidget,
+    this.onConnectivityResult,
   })  : assert(onlineWidget != null),
         assert(offlineWidget != null);
 
   final Widget onlineWidget;
   final Widget offlineWidget;
+  final ConnectivityCallback onConnectivityResult;
 
   @override
-  _ConnectivityAlertWidgetState createState() => _ConnectivityAlertWidgetState();
+  _ConnectivityAlertWidgetState createState() =>
+      _ConnectivityAlertWidgetState();
 }
 
 class _ConnectivityAlertWidgetState extends State<ConnectivityAlertWidget> {
@@ -28,6 +33,7 @@ class _ConnectivityAlertWidgetState extends State<ConnectivityAlertWidget> {
     isOnline = true;
 
     _subscription = Connectivity().onConnectivityChanged.listen((result) {
+      widget.onConnectivityResult(result);
       setState(() {
         if (result == ConnectivityResult.none) {
           isOnline = false;
