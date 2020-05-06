@@ -1,3 +1,7 @@
+## [1.0.1+1]
+
+Updating dependencies
+
 ## [1.0.1]
 
 Exposing a callback to be executed in every connectivity change
