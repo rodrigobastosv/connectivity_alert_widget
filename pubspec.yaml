@@ -10,7 +10,7 @@ dependencies:
   flutter:
     sdk: flutter
 
-  connectivity: ^3.0.0-nullsafety.3
+  connectivity: ^3.0.2
 
 dev_dependencies:
   flutter_test:
