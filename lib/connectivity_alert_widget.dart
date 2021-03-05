@@ -9,15 +9,14 @@ typedef ConnectivityCallback = Function(ConnectivityResult);
 
 class ConnectivityAlertWidget extends StatefulWidget {
   ConnectivityAlertWidget({
-    @required this.onlineWidget,
-    @required this.offlineWidget,
+    required this.onlineWidget,
+    required this.offlineWidget,
     this.onConnectivityResult,
-  })  : assert(onlineWidget != null),
-        assert(offlineWidget != null);
+  });
 
   final Widget onlineWidget;
   final Widget offlineWidget;
-  final ConnectivityCallback onConnectivityResult;
+  final ConnectivityCallback? onConnectivityResult;
 
   @override
   _ConnectivityAlertWidgetState createState() =>
@@ -25,15 +24,18 @@ class ConnectivityAlertWidget extends StatefulWidget {
 }
 
 class _ConnectivityAlertWidgetState extends State<ConnectivityAlertWidget> {
-  bool isOnline;
-  StreamSubscription<ConnectivityResult> _subscription;
+  late bool isOnline;
+  StreamSubscription<ConnectivityResult>? _subscription;
 
   @override
   void initState() {
     isOnline = true;
 
     _subscription = Connectivity().onConnectivityChanged.listen((result) {
-      widget.onConnectivityResult(result);
+      if (widget.onConnectivityResult != null) {
+        widget.onConnectivityResult!(result);
+      }
+      
       setState(() {
         if (result == ConnectivityResult.none) {
           isOnline = false;
@@ -52,7 +54,7 @@ class _ConnectivityAlertWidgetState extends State<ConnectivityAlertWidget> {
 
   @override
   void dispose() {
-    _subscription.cancel();
+    _subscription?.cancel();
     super.dispose();
   }
 }

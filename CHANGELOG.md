@@ -1,3 +1,8 @@
+## [2.0.0]
+
+Migrating to use null safe
+
+
 ## [1.0.1+1]
 
 Updating dependencies
