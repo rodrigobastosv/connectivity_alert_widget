@@ -2,7 +2,7 @@ library connectivity_alert_widget;
 
 import 'dart:async';
 
-import 'package:connectivity/connectivity.dart';
+import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
 
 typedef ConnectivityCallback = Function(ConnectivityResult);
