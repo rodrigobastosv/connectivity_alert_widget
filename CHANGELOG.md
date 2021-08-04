@@ -1,3 +1,7 @@
+## [2.0.1]
+
+- Migrated from the deprecated connectivity plugin to connectivity_plus.
+
 ## [2.0.0]
 
 Migrating to use null safe
