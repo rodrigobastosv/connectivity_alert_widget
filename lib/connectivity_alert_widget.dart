@@ -14,8 +14,13 @@ class ConnectivityAlertWidget extends StatefulWidget {
     this.onConnectivityResult,
   });
 
+  /// Widget that is shown when the app is online
   final Widget onlineWidget;
+
+  /// Widget that is shown when the app is offline
   final Widget offlineWidget;
+
+  /// Callback called when theres change on the connectivity status
   final ConnectivityCallback? onConnectivityResult;
 
   @override
@@ -35,7 +40,7 @@ class _ConnectivityAlertWidgetState extends State<ConnectivityAlertWidget> {
       if (widget.onConnectivityResult != null) {
         widget.onConnectivityResult!(result);
       }
-      
+
       setState(() {
         if (result == ConnectivityResult.none) {
           isOnline = false;
