@@ -1,6 +1,6 @@
 name: connectivity_alert_widget
 description: A Flutter package to handle connectivity in an elegant way, giving power to the user to display different widgets when there's or there isn't connectivity
-version: 2.0.0+1
+version: 2.0.0+2
 homepage: https://github.com/rodrigobastosv/connectivity_alert_widget
 
 environment:
